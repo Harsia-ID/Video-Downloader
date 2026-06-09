@@ -28,19 +28,7 @@ Menyaring file yang tidak relevan seperti:
 ### 🎨 Modern Glassmorphism UI
 Antarmuka modern dengan desain Glassmorphism yang ringan dan responsif.
 
----
-
-## 📸 Screenshots
-
-### Main Interface
-
-![Main Interface](assets/screenshots/main-interface.png)
-
-### Media Detection
-
-![Media Detection](assets/screenshots/media-detection.png)
-
----
+--- 
 
 ## 🛠 Installation
 
