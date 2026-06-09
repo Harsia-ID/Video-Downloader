@@ -1,61 +1,160 @@
 🚀 Smart Media Downloader Pro
 
-Smart Media Downloader Pro adalah ekstensi Google Chrome super ringan dan canggih untuk mendeteksi serta mengunduh berbagai jenis media (Video, Audio, HLS, GIF) dari halaman web secara real-time. Ekstensi ini dilengkapi dengan teknologi Silent Auto-Bypass untuk mengunduh video streaming terenkripsi (seperti YouTube, X/Twitter, dan Facebook) langsung menjadi file MP4 utuh tanpa hambatan.
+Smart Media Downloader Pro adalah ekstensi Google Chrome yang ringan namun canggih untuk mendeteksi dan mengunduh berbagai jenis media (Video, Audio, HLS, dan GIF) dari halaman web secara real-time.
+
+Ekstensi ini dilengkapi dengan teknologi Silent Auto-Bypass yang memungkinkan pengunduhan video streaming yang menggunakan format Blob atau DASH stream menjadi file MP4 utuh secara otomatis melalui integrasi API pihak ketiga.
 
 ✨ Fitur Unggulan
+⚡ Silent Auto-Bypass
 
-⚡ Silent Auto-Bypass: Mendeteksi video dengan format Blob/DASH stream dan secara otomatis merakitnya di latar belakang menggunakan API Cobalt.tools. Unduhan MP4 utuh akan langsung berjalan tanpa harus pindah tab!
+Mendeteksi video dengan format Blob/DASH stream dan secara otomatis memprosesnya di latar belakang menggunakan API Cobalt.tools. File MP4 akan langsung terunduh tanpa perlu membuka tab tambahan.
 
-🧹 Smart Filter (Declutter): Secara otomatis mengabaikan file pelacak (tracker), ikon, atau file media berukuran sangat kecil (di bawah 100KB) agar daftar unduhan Anda tetap bersih dan tidak membingungkan.
+🧹 Smart Filter (Declutter)
 
-🔄 Real-Time Scanner: Memadukan Network Sniffer (background.js) dan DOM MutationObserver (content.js) untuk menangkap video autoplay atau video yang baru di-scroll secara instan.
+Secara otomatis menyaring file yang tidak relevan seperti tracker, icon, atau media berukuran sangat kecil (di bawah 100 KB) sehingga daftar media tetap bersih dan mudah dipahami.
 
-📑 HLS & M3U8 Support: Mampu mengenali tautan playlist dari situs streaming film dan menawarkannya sebagai file unduhan yang rapi.
+🔄 Real-Time Scanner
 
-🎨 macOS Glassmorphism UI: Antarmuka ekstensi didesain menggunakan gaya frosted glass khas Apple (macOS/iOS) yang sangat elegan, modern, dan responsif.
+Menggabungkan Network Sniffer (background.js) dan DOM MutationObserver (content.js) untuk menangkap media yang muncul secara dinamis, termasuk video autoplay atau video yang dimuat saat pengguna melakukan scroll.
 
-🛠️ Cara Instalasi (Developer Mode)
+📑 HLS & M3U8 Support
 
-Karena ekstensi ini sangat canggih dan melakukan bypass jaringan, Anda perlu memasangnya melalui Mode Pengembang:
+Mampu mendeteksi playlist streaming berbasis HLS (.m3u8) dan menampilkannya sebagai opsi unduhan yang lebih rapi.
 
-Clone repositori ini atau Download ZIP lalu ekstrak di komputer Anda.
+🎨 macOS Glassmorphism UI
 
-Buka Google Chrome dan ketik chrome://extensions/ di address bar.
+Menggunakan desain antarmuka bergaya Glassmorphism ala macOS/iOS dengan tampilan modern, elegan, dan responsif.
 
-Aktifkan Developer mode (Mode Pengembang) di pojok kanan atas layar.
+🛠️ Instalasi (Developer Mode)
 
-Klik tombol Load unpacked (Muat yang belum dikemas).
+Karena ekstensi ini memerlukan akses tingkat lanjut untuk mendeteksi lalu lintas media, instalasi dilakukan melalui Chrome Developer Mode.
 
-Pilih folder tempat Anda mengekstrak repositori ini.
+1. Download Repository
 
-🎉 Selesai! Sematkan (pin) ikon ekstensi ini di bilah atas browser Anda agar mudah diakses.
+Clone repository:
+
+git clone https://github.com/username/smart-media-downloader-pro.git
+
+Atau download file ZIP dan ekstrak ke komputer Anda.
+
+2. Buka Halaman Extensions
+
+Masukkan alamat berikut pada browser Chrome:
+
+chrome://extensions/
+3. Aktifkan Developer Mode
+
+Aktifkan tombol Developer mode yang berada di pojok kanan atas.
+
+4. Load Extension
+
+Klik tombol:
+
+Load unpacked
+
+Kemudian pilih folder repository yang telah diekstrak.
+
+5. Selesai
+
+Ekstensi berhasil terpasang.
+
+Disarankan untuk melakukan Pin Extension agar lebih mudah diakses dari toolbar browser.
 
 🚀 Cara Penggunaan
+Langkah 1
 
-Buka situs web apa saja yang memuat video atau musik (misalnya YouTube, Facebook, Twitter, atau web normal).
+Buka situs yang memuat media, seperti:
 
-Mainkan video tersebut selama 1-2 detik agar browser memuat jaringan medianya.
+YouTube
+Facebook
+X (Twitter)
+Situs video lainnya
+Situs musik atau podcast
+Website biasa yang menyediakan file media
+Langkah 2
 
-Klik ikon Smart Media Downloader di pojok kanan atas.
+Putar video selama beberapa detik agar browser memuat jaringan media.
 
-Anda akan melihat daftar media yang tertangkap.
+Langkah 3
 
-Untuk Video Normal, klik unduh dan file akan langsung tersimpan.
+Klik ikon Smart Media Downloader Pro pada toolbar browser.
 
-Untuk Platform Terenkripsi (Label: Auto-Bypass), saat tombol unduh ditekan, ikon akan berubah menjadi loading (⏳). Ekstensi sedang melakukan proses perakitan rahasia di latar belakang. Dalam hitungan detik, file MP4 utuh akan otomatis terunduh ke komputer Anda!
+Langkah 4
 
-📂 Struktur Repositori
+Daftar media yang berhasil terdeteksi akan ditampilkan.
 
-manifest.json : Konfigurasi ekstensi, permissions (webRequest, activeTab, downloads), dan definisi Service Worker.
+Langkah 5
 
-background.js : Network Sniffer yang mencegat lalu lintas jaringan untuk mencari file media dan mengekstrak Content-Length.
+Pilih salah satu media untuk diunduh.
 
-content.js : Skrip yang disuntikkan ke dalam halaman web untuk mendeteksi perubahan tag <video> secara real-time.
+Video Normal
 
-popup.html : Struktur antarmuka pengguna (UI) dengan desain Glassmorphism.
+Klik tombol Download dan file akan langsung tersimpan ke komputer.
 
-popup.js : Logika rendering antarmuka, pengelompokan ekstensi file, dan eksekutor Cobalt API Fetch untuk Auto-Bypass.
+Media dengan Label Auto-Bypass
 
-⚠️ Disclaimer Pihak Ketiga
+Saat tombol download ditekan:
 
-Ekstensi ini menggunakan layanan API pihak ketiga yang bersifat open-source dan bebas iklan (Cobalt.tools) untuk fitur Auto-Bypass. Segala jenis pengunduhan konten yang dilindungi hak cipta adalah tanggung jawab pengguna sepenuhnya.
+Ikon akan berubah menjadi loading (⏳)
+Ekstensi akan memproses media di latar belakang
+Setelah proses selesai, file MP4 akan otomatis diunduh
+📂 Struktur Repository
+smart-media-downloader-pro/
+│
+├── manifest.json
+├── background.js
+├── content.js
+├── popup.html
+├── popup.js
+└── assets/
+manifest.json
+
+Konfigurasi utama ekstensi, permission yang digunakan, serta definisi Service Worker.
+
+background.js
+
+Network Sniffer yang memantau lalu lintas jaringan dan mendeteksi sumber media yang tersedia.
+
+content.js
+
+Script yang dijalankan pada halaman web untuk memantau perubahan elemen video secara real-time.
+
+popup.html
+
+Struktur tampilan antarmuka pengguna (UI).
+
+popup.js
+
+Mengatur logika antarmuka, pengelompokan file media, serta integrasi proses Auto-Bypass.
+
+🔒 Permissions yang Digunakan
+{
+  "permissions": [
+    "downloads",
+    "storage",
+    "activeTab",
+    "webRequest"
+  ]
+}
+
+Permissions digunakan untuk:
+
+Mengakses tab aktif
+Mendeteksi permintaan media
+Menyimpan konfigurasi pengguna
+Mengelola proses pengunduhan
+⚠️ Disclaimer
+
+Ekstensi ini menggunakan layanan API pihak ketiga yang bersifat open-source dan bebas iklan untuk mendukung beberapa fitur pemrosesan media.
+
+Pengguna bertanggung jawab penuh atas penggunaan ekstensi ini dan wajib mematuhi hukum, syarat layanan, serta ketentuan hak cipta yang berlaku pada setiap platform yang digunakan.
+
+Pengembang tidak bertanggung jawab atas penyalahgunaan perangkat lunak ini untuk tujuan yang melanggar hukum atau ketentuan layanan pihak ketiga.
+
+📜 License
+
+MIT License
+
+Copyright (c) 2026 Smart Media Downloader Pro
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
