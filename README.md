@@ -1,160 +1,190 @@
-🚀 Smart Media Downloader Pro
+# 🚀 Smart Media Downloader Pro
 
-Smart Media Downloader Pro adalah ekstensi Google Chrome yang ringan namun canggih untuk mendeteksi dan mengunduh berbagai jenis media (Video, Audio, HLS, dan GIF) dari halaman web secara real-time.
+Smart Media Downloader Pro adalah ekstensi Google Chrome yang ringan dan canggih untuk mendeteksi serta mengunduh berbagai jenis media seperti Video, Audio, HLS Stream, dan GIF langsung dari halaman web secara real-time.
 
-Ekstensi ini dilengkapi dengan teknologi Silent Auto-Bypass yang memungkinkan pengunduhan video streaming yang menggunakan format Blob atau DASH stream menjadi file MP4 utuh secara otomatis melalui integrasi API pihak ketiga.
+Ekstensi ini dilengkapi dengan fitur Auto-Bypass yang memungkinkan pemrosesan media streaming tertentu secara otomatis sehingga pengguna dapat mengunduh file dengan lebih mudah.
 
-✨ Fitur Unggulan
-⚡ Silent Auto-Bypass
+---
 
-Mendeteksi video dengan format Blob/DASH stream dan secara otomatis memprosesnya di latar belakang menggunakan API Cobalt.tools. File MP4 akan langsung terunduh tanpa perlu membuka tab tambahan.
+## ✨ Features
 
-🧹 Smart Filter (Declutter)
+### ⚡ Silent Auto-Bypass
+Mendeteksi video berbasis Blob dan DASH Stream kemudian memprosesnya secara otomatis di latar belakang.
 
-Secara otomatis menyaring file yang tidak relevan seperti tracker, icon, atau media berukuran sangat kecil (di bawah 100 KB) sehingga daftar media tetap bersih dan mudah dipahami.
+### 🔄 Real-Time Scanner
+Menggabungkan pemantauan jaringan dan pemindaian DOM untuk menangkap media yang dimuat secara dinamis.
 
-🔄 Real-Time Scanner
+### 📑 HLS & M3U8 Support
+Mendeteksi playlist HLS (`.m3u8`) dari berbagai situs streaming.
 
-Menggabungkan Network Sniffer (background.js) dan DOM MutationObserver (content.js) untuk menangkap media yang muncul secara dinamis, termasuk video autoplay atau video yang dimuat saat pengguna melakukan scroll.
+### 🧹 Smart Filter
+Menyaring file yang tidak relevan seperti:
 
-📑 HLS & M3U8 Support
+- Tracker
+- Analytics request
+- Icons
+- Media berukuran kecil (<100 KB)
 
-Mampu mendeteksi playlist streaming berbasis HLS (.m3u8) dan menampilkannya sebagai opsi unduhan yang lebih rapi.
+### 🎨 Modern Glassmorphism UI
+Antarmuka modern dengan desain Glassmorphism yang ringan dan responsif.
 
-🎨 macOS Glassmorphism UI
+---
 
-Menggunakan desain antarmuka bergaya Glassmorphism ala macOS/iOS dengan tampilan modern, elegan, dan responsif.
+## 📸 Screenshots
 
-🛠️ Instalasi (Developer Mode)
+### Main Interface
 
-Karena ekstensi ini memerlukan akses tingkat lanjut untuk mendeteksi lalu lintas media, instalasi dilakukan melalui Chrome Developer Mode.
+![Main Interface](assets/screenshots/main-interface.png)
 
-1. Download Repository
+### Media Detection
 
-Clone repository:
+![Media Detection](assets/screenshots/media-detection.png)
 
-git clone https://github.com/username/smart-media-downloader-pro.git
+---
 
-Atau download file ZIP dan ekstrak ke komputer Anda.
+## 🛠 Installation
 
-2. Buka Halaman Extensions
+### Install via Developer Mode
 
-Masukkan alamat berikut pada browser Chrome:
+1. Clone repository:
 
+```bash
+git clone https://github.com/Harsia-ID/Video-Downloader.git
+```
+
+2. Buka Google Chrome.
+
+3. Masuk ke:
+
+```
 chrome://extensions/
-3. Aktifkan Developer Mode
+```
 
-Aktifkan tombol Developer mode yang berada di pojok kanan atas.
+4. Aktifkan **Developer Mode**.
 
-4. Load Extension
+5. Klik **Load unpacked**.
 
-Klik tombol:
+6. Pilih folder repository yang telah di-clone atau diekstrak.
 
-Load unpacked
+7. Selesai.
 
-Kemudian pilih folder repository yang telah diekstrak.
+---
 
-5. Selesai
+## 🚀 Usage
 
-Ekstensi berhasil terpasang.
+1. Buka website yang berisi video atau audio.
+2. Putar media selama beberapa detik.
+3. Klik ikon ekstensi.
+4. Tunggu proses deteksi media.
+5. Pilih file yang ingin diunduh.
+6. Klik tombol Download.
 
-Disarankan untuk melakukan Pin Extension agar lebih mudah diakses dari toolbar browser.
+---
 
-🚀 Cara Penggunaan
-Langkah 1
+## 📂 Project Structure
 
-Buka situs yang memuat media, seperti:
-
-YouTube
-Facebook
-X (Twitter)
-Situs video lainnya
-Situs musik atau podcast
-Website biasa yang menyediakan file media
-Langkah 2
-
-Putar video selama beberapa detik agar browser memuat jaringan media.
-
-Langkah 3
-
-Klik ikon Smart Media Downloader Pro pada toolbar browser.
-
-Langkah 4
-
-Daftar media yang berhasil terdeteksi akan ditampilkan.
-
-Langkah 5
-
-Pilih salah satu media untuk diunduh.
-
-Video Normal
-
-Klik tombol Download dan file akan langsung tersimpan ke komputer.
-
-Media dengan Label Auto-Bypass
-
-Saat tombol download ditekan:
-
-Ikon akan berubah menjadi loading (⏳)
-Ekstensi akan memproses media di latar belakang
-Setelah proses selesai, file MP4 akan otomatis diunduh
-📂 Struktur Repository
-smart-media-downloader-pro/
+```text
+Video-Downloader/
 │
 ├── manifest.json
 ├── background.js
 ├── content.js
 ├── popup.html
 ├── popup.js
-└── assets/
-manifest.json
+├── assets/
+│   ├── icons/
+│   └── screenshots/
+│
+└── README.md
+```
 
-Konfigurasi utama ekstensi, permission yang digunakan, serta definisi Service Worker.
+---
 
-background.js
+## 📄 File Description
 
-Network Sniffer yang memantau lalu lintas jaringan dan mendeteksi sumber media yang tersedia.
+| File | Description |
+|--------|-------------|
+| manifest.json | Konfigurasi utama ekstensi |
+| background.js | Monitoring request jaringan |
+| content.js | Scanner elemen media pada halaman |
+| popup.html | Tampilan antarmuka pengguna |
+| popup.js | Logika UI dan proses download |
 
-content.js
+---
 
-Script yang dijalankan pada halaman web untuk memantau perubahan elemen video secara real-time.
+## 🔒 Permissions
 
-popup.html
+Ekstensi menggunakan beberapa permission berikut:
 
-Struktur tampilan antarmuka pengguna (UI).
-
-popup.js
-
-Mengatur logika antarmuka, pengelompokan file media, serta integrasi proses Auto-Bypass.
-
-🔒 Permissions yang Digunakan
+```json
 {
   "permissions": [
+    "activeTab",
     "downloads",
     "storage",
-    "activeTab",
     "webRequest"
   ]
 }
+```
 
-Permissions digunakan untuk:
+---
 
-Mengakses tab aktif
-Mendeteksi permintaan media
-Menyimpan konfigurasi pengguna
-Mengelola proses pengunduhan
-⚠️ Disclaimer
+## 🎯 Supported Formats
 
-Ekstensi ini menggunakan layanan API pihak ketiga yang bersifat open-source dan bebas iklan untuk mendukung beberapa fitur pemrosesan media.
+| Format | Status |
+|----------|----------|
+| MP4 | ✅ |
+| WEBM | ✅ |
+| MP3 | ✅ |
+| M4A | ✅ |
+| AAC | ✅ |
+| OGG | ✅ |
+| GIF | ✅ |
+| M3U8 | ✅ |
+| HLS Stream | ✅ |
 
-Pengguna bertanggung jawab penuh atas penggunaan ekstensi ini dan wajib mematuhi hukum, syarat layanan, serta ketentuan hak cipta yang berlaku pada setiap platform yang digunakan.
+---
 
-Pengembang tidak bertanggung jawab atas penyalahgunaan perangkat lunak ini untuk tujuan yang melanggar hukum atau ketentuan layanan pihak ketiga.
+## 🤝 Contributing
 
-📜 License
+Kontribusi selalu diterima.
+
+1. Fork repository ini.
+2. Buat branch baru.
+3. Commit perubahan.
+4. Push ke branch Anda.
+5. Buat Pull Request.
+
+---
+
+## 🐛 Report Bug
+
+Jika menemukan bug:
+
+1. Buka tab Issues.
+2. Jelaskan langkah reproduksi bug.
+3. Sertakan screenshot jika memungkinkan.
+
+---
+
+## ⚠ Disclaimer
+
+Project ini dibuat untuk tujuan edukasi dan penggunaan pribadi.
+
+Pengguna bertanggung jawab penuh terhadap penggunaan software ini dan wajib mematuhi:
+
+- Hak cipta yang berlaku
+- Ketentuan layanan website terkait
+- Peraturan hukum yang berlaku di wilayah masing-masing
+
+Developer tidak bertanggung jawab atas penyalahgunaan software ini.
+
+---
+
+## 📜 License
 
 MIT License
 
-Copyright (c) 2026 Smart Media Downloader Pro
+Copyright (c) 2026 Harsia-ID
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files to deal in the Software without restriction.
